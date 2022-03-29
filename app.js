@@ -47,6 +47,11 @@ addButton.addEventListener('click', function(){
 
     const subTotal =  calculateSubTotal();
     document.getElementById('sub-total').innerText = subTotal;
+
+    const tax = subTotal * .2;
+    document.getElementById("tax").innerText = tax.toFixed(2);
+
+    document.getElementById("grand-total").innerText = subTotal + tax;
 });
 
 //total calculation
