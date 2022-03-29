@@ -17,6 +17,12 @@ addButton.addEventListener('click', function(){
     const itemPrice = document.getElementById('item-price-input');
     const itemQuantity = document.getElementById('item-quantity-input');
 
+    //error handling
+    if (itemName.value == '' || itemPrice.value < 0 || itemQuantity.value < 0 || itemPrice.value == '' || itemQuantity.value == ''){
+        console.log('sorry');
+        return;
+    }
+
     // <tr>
     //     <th >1</th>
     //     <td>Mark</td>
