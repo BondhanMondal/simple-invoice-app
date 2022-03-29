@@ -31,6 +31,8 @@ addButton.addEventListener('click', function(){
     const td2 = document.createElement('td');
     const td3 = document.createElement('td');
 
+    td3.classList.add('item-total');
+
     th.innerText = itemName.value;       //<th >name</th>
     td1.innerText = itemPrice.value;     //<td>price</td>
     td2.innerText = itemQuantity.value;
@@ -43,3 +45,13 @@ addButton.addEventListener('click', function(){
 
     infoTable.appendChild(tr);
 });
+
+//total calculation
+function totalCalculation(){
+
+}
+
+function subTotal(){
+
+    const cost = document.getElementsByClassName('item-total');
+}
