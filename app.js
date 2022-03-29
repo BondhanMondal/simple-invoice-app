@@ -25,8 +25,10 @@ addButton.addEventListener('click', function(){
     // </tr>
     const totalPrice = parseInt(itemPrice.value) * parseInt(itemQuantity.value);
 
-    const tr = document.createElement('tr');
-    const th = document.createElement('th');
+    //const tr = document.createElement('tr');
+    const tr = element('tr');
+    const th = element('th');
+    //const th = document.createElement('th');
     const td1 = document.createElement('td');
     const td2 = document.createElement('td');
     const td3 = document.createElement('td');
@@ -44,18 +46,28 @@ addButton.addEventListener('click', function(){
     tr.appendChild(td3);
 
     infoTable.appendChild(tr);
-
-    const subTotal =  calculateSubTotal();
-    document.getElementById('sub-total').innerText = subTotal;
-
-    const tax = subTotal * .2;
-    document.getElementById("tax").innerText = tax.toFixed(2);
-
-    document.getElementById("grand-total").innerText = subTotal + tax;
+    
+    totalCalculation();
 });
+
+
+function element(param){
+    return document.createElement(param);
+}
 
 //total calculation
 function totalCalculation(){
+
+    const subTotal = calculateSubTotal();
+    document.getElementById('sub-total').innerText = subTotal;
+
+    const tax = subTotal * .2;
+
+    document.getElementById("tax").innerText = tax.toFixed(2);
+    document.getElementById("grand-total").innerText = subTotal + tax;
+    document.getElementById("grand-total-2").innerText = subTotal + tax;
+
+
 
 }
 
