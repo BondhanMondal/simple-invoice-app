@@ -44,6 +44,9 @@ addButton.addEventListener('click', function(){
     tr.appendChild(td3);
 
     infoTable.appendChild(tr);
+
+    const subTotal =  calculateSubTotal();
+    document.getElementById('sub-total').innerText = subTotal;
 });
 
 //total calculation
@@ -51,7 +54,17 @@ function totalCalculation(){
 
 }
 
-function subTotal(){
+function calculateSubTotal(){
+
+    let subTotal = 0;
 
     const cost = document.getElementsByClassName('item-total');
+
+    for(let i = 0; i < cost.length; i++){
+        const element = cost[i];
+        const price = parseInt(element.innerText);
+        subTotal = subTotal + price;
+    }
+    return subTotal;
+    
 }
