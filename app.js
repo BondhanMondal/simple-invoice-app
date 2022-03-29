@@ -8,7 +8,7 @@ detailsButton.addEventListener('click', function(){
 
 });
 
-const addButton = document.getElementById('add-detail-btn');
+const addButton = document.getElementById('add-details-btn');
 
 addButton.addEventListener('click', function(){
 
@@ -31,7 +31,15 @@ addButton.addEventListener('click', function(){
     const td2 = document.createElement('td');
     const td3 = document.createElement('td');
 
-    th.innerText = itemName.value;
-    td1.innerText = itemPrice.value;
+    th.innerText = itemName.value;       //<th >name</th>
+    td1.innerText = itemPrice.value;     //<td>price</td>
     td2.innerText = itemQuantity.value;
+    td3.innerText = totalPrice;
+
+    tr.appendChild(th);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+
+    infoTable.appendChild(tr);
 });
